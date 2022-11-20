@@ -50,7 +50,7 @@ const UserMetaData: React.FC<{
 
 	return (
 		<>
-			<UserMetaDataContainer data-aos="fade-up">
+			<UserMetaDataContainer>
 				<Image
 					style={{ borderRadius: '20px' }}
 					src={profilePicture}
