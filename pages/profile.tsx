@@ -1,13 +1,14 @@
-import styled from 'styled-components';
 import { Container } from '../components/sharedstyles';
 import UserMetaData from '../components/UserMetaData';
 import { useUser } from '../context/user';
+import { getUserById } from '../data/user';
 
 const Profile = () => {
-	const { user } = useUser();
+	const { user: userFromContext } = useUser();
+	const user = getUserById(userFromContext?.id);
 
 	if (!user) {
-		return <div>Yuu need to be logged in to see this page</div>;
+		return <div>You need to be logged in to see this page</div>;
 	}
 
 	return (

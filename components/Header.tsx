@@ -41,15 +41,17 @@ const Header: React.FC<{ pathName: string }> = ({ pathName }) => {
 			  ]),
 	];
 
-	console.log(user);
-
 	return (
 		<MyHeader>
-			<Image src={msgLogo} alt="My App Logo" width={100} height={50} />
+			<Link href={'/'}>
+				<Image src={msgLogo} alt="My App Logo" width={100} height={50} />
+			</Link>
 			<Nav>
 				{navLinks.map((link) => (
 					<Link
-						className={`${pathName === link.href ? 'active' : ''}`}
+						className={`${
+							pathName === link.href ? 'active' : ''
+						} ${link.href.replace(/\//g, '')}`}
 						href={link.href}>
 						{link.name}
 					</Link>
@@ -61,7 +63,7 @@ const Header: React.FC<{ pathName: string }> = ({ pathName }) => {
 					<LoggedInAs>
 						Du bist eingeloggt als <span>{user.email}</span>
 					</LoggedInAs>
-					<Link href={'/user/dummy'}>
+					<Link href={'/profile'}>
 						<Image
 							style={{ borderRadius: '50%' }}
 							src={user.profilePicture}
@@ -125,6 +127,14 @@ const Nav = styled.nav`
 				opacity: 1;
 			}
 		}
+		&.profile {
+			display: none;
+		}
+		@media screen and (min-width: 600px) {
+			&.profile {
+				display: block;
+			}
+		}
 	}
 `;
 
@@ -137,10 +147,14 @@ const LoggedInAs = styled.p`
 	color: ${(props) => props.theme.colors.gray};
 	font-size: 0.8rem;
 	margin-right: 1rem;
+	display: none;
 	span {
 		color: ${(props) => props.theme.colors.text};
 		padding: 5px;
 		border-radius: 5px;
 		background-color: ${(props) => props.theme.colors.secondary};
+	}
+	@media screen and (min-width: 600px) {
+		display: block;
 	}
 `;

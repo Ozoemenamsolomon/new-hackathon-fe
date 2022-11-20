@@ -8,6 +8,9 @@ const Title = styled.h1`
 	text-decoration: none;
 	margin-bottom: 2rem;
 
+	@media (max-width: 600px) {
+		font-size: 2rem;
+	}
 	span {
 		color: ${({ theme }) => theme.colors.secondary};
 		text-decoration: none;
@@ -32,6 +35,7 @@ const CodeTag = styled.code`
 const Container = styled.div`
 	max-width: 875px;
 	margin: 0 auto;
+	padding: 0 1rem;
 `;
 
 export { Title, CodeTag, Container };

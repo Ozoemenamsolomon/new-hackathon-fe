@@ -27,10 +27,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = (context) => {
-	console.log({ idOfUserTORender: context.params.id });
-
 	const user = getUserById(Number(context.params.id));
-
 	return {
 		props: { user },
 	};

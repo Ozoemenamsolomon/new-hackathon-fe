@@ -23,7 +23,7 @@ const UserCard: React.FC<UserType> = ({
 				/>
 				<div>
 					<h3>
-						{firstName},{lastName}
+						{firstName}, {lastName}
 					</h3>
 					<p>{email}</p>
 					<p>{jobTitle}</p>
@@ -44,6 +44,7 @@ const UserCardContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	isolation: isolate;
+	position: relative;
 	> div {
 		gap: 1rem;
 		align-items: center;
@@ -54,5 +55,12 @@ const UserCardContainer = styled.div`
 	}
 	p {
 		margin: 0;
+	}
+	> div:last-child {
+		@media (max-width: 600px) {
+			position: absolute;
+			right: 24px;
+			bottom: 14px;
+		}
 	}
 `;

@@ -16,13 +16,13 @@ const CompLabelSmall = (props: ILabelSmall) => {
     const router = useRouter();
 
     return (
-        <div>
+        <div style={{width : "450px"}}>
             
             <button  style={{
                 cursor:"pointer",
                 border : "none",
                 backgroundColor: "#841439", width: "200px", height: "100px", borderTopLeftRadius: "15px",
-                borderBottomLeftRadius: "15px", lineHeight: "100px", marginTop: "20px", color: "white", display: "flex", float: "left", paddingRight : "100"
+                borderBottomLeftRadius: "15px", lineHeight: "100px", marginTop: "20px", color: "white", display: "flex", float: "left", paddingRight : "100px" 
             }}>
                 <div style={{ fontSize: "25px", paddingLeft: "20px" }}>
                     {props.textLeft}

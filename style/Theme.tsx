@@ -5,7 +5,7 @@ export const theme: DefaultTheme = {
 		primary: '#314664',
 		secondary: '#841439',
 		text: '#fff',
-		gray: '#706f6f',
+		gray: '#818181',
 		white: '#fff',
 	},
 };

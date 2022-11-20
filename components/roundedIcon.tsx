@@ -29,7 +29,7 @@ const RoundedIcon = (index : Iindex) => {
     
 	return (
         <div style={index.index === index.currentindex ? {background : "#841439", paddingLeft : "3px", width: "30px", height: "30px", borderRadius : "20px" } : {paddingLeft : "15px"}}>
-        <Image  src={index.index === index.currentindex ? industries[index.index][1] : industries[index.index][0]} alt="User Image" width={25} height={25} />
+        <Image style={index.index === index.currentindex ? {paddingRight : "3px"} : {}}  src={index.index === index.currentindex ? industries[index.index][1] : industries[index.index][0]} alt="User Image" width={25} height={25} />
         </div>
 	);
 };
